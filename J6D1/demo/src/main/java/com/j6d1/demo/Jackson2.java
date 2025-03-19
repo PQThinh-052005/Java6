@@ -25,8 +25,8 @@ public class Jackson2 {
         // demo5();
         // System.out.println("Demo 6");
         // demo6();
-        System.out.println("Demo 7");
-        demo7();
+        // System.out.println("Demo 7");
+        // demo7();
     }
 
     private static void demo7() throws Exception {
