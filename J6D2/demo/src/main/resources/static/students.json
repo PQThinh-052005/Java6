@@ -1,0 +1,90 @@
+[
+    {
+        "name": "Phạm Quang Thịnh",
+        "gender": true,
+        "gpa": 8.5,
+        "contact": {
+            "email": "phamquangthinh2152005@gmail.com",
+            "phone": "0987654321",
+            "address": "Đồng Tháp"
+        },
+        "courses": ["Java", "C#", "Python"]
+    },
+    {
+        "name": "Võ Thanh Bin",
+        "gender": true,
+        "gpa": 8.5,
+        "contact": {
+            "email": "binvo@gmail.com",
+            "phone": "0987654321",
+            "address": "Cần Giờ"
+        },
+        "courses": ["Java", "C++", "Python"]
+    },
+    {
+        "name": "Nguyễn Thị Lan",
+        "gender": false,
+        "gpa": 9.0,
+        "contact": {
+            "email": "lannt@gmail.com",
+            "phone": "0912345678",
+            "address": "Hà Nội"
+        },
+        "courses": ["Python"]
+    },
+    {
+        "name": "Trần Văn An",
+        "gender": true,
+        "gpa": 7.8,
+        "contact": {
+            "email": "antran@gmail.com",
+            "phone": "0923456789",
+            "address": "Hải Phòng"
+        },
+        "courses": ["Java", "JavaScript", "SQL"]
+    },
+    {
+        "name": "Lê Hoài Nam",
+        "gender": true,
+        "gpa": 8.2,
+        "contact": {
+            "email": "namle@gmail.com",
+            "phone": "0934567890",
+            "address": "Đà Nẵng"
+        },
+        "courses": ["C#", "ASP.NET", "SQL"]
+    },
+    {
+        "name": "Hoàng Minh Thư",
+        "gender": false,
+        "gpa": 9.3,
+        "contact": {
+            "email": "thuhoang@gmail.com",
+            "phone": "0945678901",
+            "address": "Huế"
+        },
+        "courses": ["Python", "Data Science"]
+    },
+    {
+        "name": "Đặng Hữu Phát",
+        "gender": true,
+        "gpa": 7.5,
+        "contact": {
+            "email": "phatdan@gmail.com",
+            "phone": "0956789012",
+            "address": "Cần Thơ"
+        },
+        "courses": ["JavaScript", "React", "Node.js"]
+    },
+    {
+        "name": "Bùi Thị Như Ý",
+        "gender": false,
+        "gpa": 8.8,
+        "contact": {
+            "email": "yibuithinhu@gmail.com",
+            "phone": "0967890123",
+            "address": "Bình Dương"
+        },
+        "courses": ["Java", "Spring Boot", "MySQL"]
+    }
+]

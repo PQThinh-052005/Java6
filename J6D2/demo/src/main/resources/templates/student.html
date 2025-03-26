@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a th:href="@{|/student?index=${index+1}|}">Next</a>
+    <a th:href="@{|/student?index=${index-1}|}">Previous</a>
+    <ul th:object="${student}">
+        <li th:text="${student.name}"></li>
+        <li th:text="*{gpa}"></li>
+        <li th:text="*{contact.email}"></li>
+    </ul>
+</body>
+</html>
+

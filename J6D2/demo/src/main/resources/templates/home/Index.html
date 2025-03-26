@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" alt="" th:src="@{/images/logo-3.png}">
+    <hr>
+    <nav th:replace="~{layout/Menu.html}"></nav>
+    <hr>
+    <h1 th:text="${message}"></h1>
+    <ul th:object="${student}">
+        <li th:text="${student.name}"></li>
+        <li th:text="*{gpa}"></li>
+        <li th:text="*{contact.email}"></li>
+    </ul>
+</body>
+</html>
+

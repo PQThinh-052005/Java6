@@ -1,0 +1,11 @@
+{
+    "name": "Phạm Quang Thịnh",
+    "gender": true,
+    "gpa": 8.5,
+    "contact": {
+        "email":"phamquangthinh2152005@gmail.com",
+        "phone": "0987654321",
+        "address": "Đồng Tháp"
+    },
+    "courses": ["Java","C#","Python"]
+}
