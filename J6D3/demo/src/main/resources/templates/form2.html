@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Data Binding</h3>
+    <form action="/validation/validated" method="post" th:object="${sv}">
+
+      <input th:field="*{email}" placeholder="Email Address?" />
+      <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color:red;"></span><br>
+
+      <input th:field="*{fullname}" placeholder="Full Name?" />
+      <span th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}" style="color:red;"></span><br>
+
+      <input th:field="*{marks}" placeholder="Average Marks?" />
+    <span th:if="${#fields.hasErrors('marks')}" th:errors="*{marks}" style="color:red;"></span><br>
+
+    <input th:field="*{gender}" th:value="true" type="radio" /> Male
+    <input th:field="*{gender}" th:value="false" type="radio" /> Female
+    <span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" style="color:red;"></span><br>
+
+    <select th:field="*{country}">
+        <option value="">Nationality?</option>
+        <option value="VN">Việt Nam</option>
+        <option value="US">United States</option>
+    </select>
+    <span th:if="${#fields.hasErrors('country')}" th:errors="*{country}" style="color:red;"></span><br>
+
+    <button type="submit">Save</button>
+
+    </form>
+  </body>
+</html>

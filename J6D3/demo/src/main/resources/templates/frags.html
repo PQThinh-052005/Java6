@@ -1,0 +1,8 @@
+<html xmlns:th="http://www.thymeleaf.org">
+  <div th:fragment="frag1">
+    <h3>Fragment 1</h3>
+  </div>
+  <div th:fragment="frag2 (x, y)">
+    <h3>Fragment: [(${x})] and [(${y})]</h3>
+  </div>
+</html>
