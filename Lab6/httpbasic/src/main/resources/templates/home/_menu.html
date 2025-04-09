@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Security</title>
+</head>
+<body>
+	<nav>
+		<a href="/home/index">Home</a> ::
+		<a href="/home/about">About Us</a> ::
+		
+		<span th:if="${#authorization.expression('isAuthenticated()')}">
+			<a href="/logout">Logout</a>
+		</span>
+		<span th:unless="${#authorization.expression('isAuthenticated()')}">
+			<a href="/login">Login</a>
+		</span>
+	</nav>
+</body>
+</html>
