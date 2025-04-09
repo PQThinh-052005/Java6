@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Spring Security</title>
-</head>
-<body>
-	<nav>
-		<a href="/home/index">Home</a> ::
-		<a href="/home/about">About Us</a> ::
-		
-		<span th:if="${#authorization.expression('isAuthenticated()')}">
-			<a href="/logout">Logout</a>
-		</span>
-		<span th:unless="${#authorization.expression('isAuthenticated()')}">
-			<a href="/login">Login</a>
-		</span>
-	</nav>
-</body>
+  </head>
+  <body>
+    <nav>
+      <a href="/home/index">Home</a> :: <a href="/home/about">About Us</a> ::
+      <a href="/logout">Logout</a> :: <a href="/loginform">Login</a> ::
+	  <a href="/home/admin">Admin</a> :: <a href="/home/user">User</a> ::
+	  <a href="/home/guest">Auth</a>
+    </nav>
+  </body>
 </html>

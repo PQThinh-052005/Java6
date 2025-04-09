@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
     <h2>Login Form</h2>
-    <form th:action="@{/login}" method="post">
+    <form th:action="@{/loginform}" method="post">
         <label>Username:</label>
         <input type="text" name="username"/> <br/>
         <label>Password:</label>
@@ -14,6 +15,7 @@
         <button type="submit">Login</button>
     </form>
     <div style="color:red" th:if="${param.error}">Sai tài khoản hoặc mật khẩu</div>
-    <div style="color:green" th:if="${param.logout}">Đăng xuất thành công</div>
+    <p th:text="${message1}"></p>
 </body>
 </html>
+

@@ -45,28 +45,31 @@ public class AuthConfig {
     }
 
     @Bean
-public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    http
-        .csrf(csrf -> csrf.disable())
-        .cors(cors -> cors.disable())
-        .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/login", "/logout").permitAll() /*cấp quyền home/index, home/about nếu cần */
-            .anyRequest().authenticated()
-        )
-        .formLogin(form -> form
-            .loginPage("/login") // Tự custom trang login
-            .defaultSuccessUrl("/home/index", true) // Đăng nhập thành công về trang chính
-            .permitAll()
-        )
-        .logout(logout -> logout
-            .logoutUrl("/logout") // URL logout
-            .logoutSuccessUrl("/home/index") // Sau khi logout thì về lại index
-            .invalidateHttpSession(true)
-            .deleteCookies("JSESSIONID")
-        );
-    return http.build();
-}
-
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(csrf -> csrf.disable())
+                .cors(cors -> cors.disable())
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/loginform", "/home/index").permitAll() 
+                        .requestMatchers("/home/admin").hasRole("ADMIN") // Chỉ admin mới vào được
+                        .requestMatchers("/home/user").hasAnyRole("USER", "ADMIN") // Chỉ user và admin mới vào được
+                        .requestMatchers("/home/guest").hasAnyRole("GUEST", "USER", "ADMIN") // Chỉ guest, user và admin mới vào được
+                        .anyRequest().authenticated())
+                .exceptionHandling(exception -> exception
+                        .accessDeniedPage("/home/index"))
+                .formLogin(form -> form
+                        .loginPage("/loginform")
+                        .defaultSuccessUrl("/home/index", true) // Đăng nhập thành công về trang chính
+                        .permitAll())
+                .logout(logout -> logout
+                        .logoutUrl("/logout") // URL logout
+                        .logoutSuccessUrl("/home/index")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID"))
+                  
+                        ;
+        return http.build();
+    }
 
     // Nếu cần dùng AuthenticationManager
     @Bean
