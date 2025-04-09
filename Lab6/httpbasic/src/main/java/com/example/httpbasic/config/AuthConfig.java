@@ -50,7 +50,7 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         .csrf(csrf -> csrf.disable())
         .cors(cors -> cors.disable())
         .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/home/index", "/home/about", "/login", "/logout").permitAll()
+            .requestMatchers("/login", "/logout").permitAll() /*cấp quyền home/index, home/about nếu cần */
             .anyRequest().authenticated()
         )
         .formLogin(form -> form
